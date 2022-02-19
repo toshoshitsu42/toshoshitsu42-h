@@ -1,0 +1,37 @@
+.kicker {
+	@extend .cf;
+	@extend .ts-out;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 12px 0 0 12px;
+	opacity: 0;
+	transform: translateY(-30px);
+	&.visible {
+		@extend .ts;
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+.kicker-topic {
+	float: left;
+	color: #fff;
+	font-weight: 700;
+	letter-spacing: 0.65px;
+}
+.kicker-pipe {
+	float: left;
+	margin: -4px 10px 0 10px;
+	width: 1px;
+	height: 21px;
+	background: transparentize(#fff, 0.6);
+	line-height: ms(1);
+}
+.kicker-description {
+	float: left;
+	padding-top: 1px;
+	color: transparentize(#fff, 0.3);
+	font-size: ms(0);
+	text-transform: uppercase;
+	letter-spacing: 0.6px;
+}

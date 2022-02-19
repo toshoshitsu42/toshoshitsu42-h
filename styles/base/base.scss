@@ -1,0 +1,66 @@
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	// Wut the fk is happening
+	//font-feature-settings: "kern", "liga" 0, "calt" 0;
+
+	::-webkit-scrollbar {
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		background: transparent;
+	}
+	::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+		border-radius: 5px;
+		border-left: 3px solid transparent;
+		border-right: 3px solid transparent;
+		border-top: 2px solid transparent;
+		border-bottom: 2px solid transparent;
+		background: $dover-gray;
+		background-clip: content-box;
+	}
+	::-webkit-scrollbar-corner {
+		background: transparent;
+	}
+	::-webkit-scrollbar-thumb:active {
+		border-radius: 5px;
+		border-left: 3px solid transparent;
+		border-right: 3px solid transparent;
+		border-top: 2px solid transparent;
+		border-bottom: 2px solid transparent;
+		background: mix(black, $dover-gray, 10%);
+		background-clip: content-box;
+	}
+	::-webkit-scrollbar-thumb:horizontal:active {
+		border-radius: 0;
+		border-top-width: 0;
+		border-bottom-width: 0;
+		border-radius: 5px;
+		border-left: 3px solid transparent;
+		border-right: 3px solid transparent;
+		border-top: 2px solid transparent;
+		border-bottom: 2px solid transparent;
+	}
+	::selection {
+		color: mix(white, $hoverable-blue-hover, 90%);
+		background: $hoverable-blue-hover;
+	}
+}
+html, body, #mount {
+	overflow: hidden;
+	height: 100%;
+}
+body {
+	opacity: 0;
+	will-change: opacity;
+	transition: opacity 0.5s cubic-bezier(.33, 0, .2, 1) .25s;
+	&.visible {
+		opacity: 1!important;
+	}
+}
+#mount {
+	background: $winter-black;
+}

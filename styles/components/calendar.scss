@@ -1,0 +1,123 @@
+.calendar {
+	overflow-y: scroll;
+	width: 100%;
+	height: 100%;
+}
+.days {
+	display: flex;
+	min-height: 100%;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: stretch;
+	backface-visibility: hidden;
+	will-change: transform;
+}
+.day {
+	position: relative;
+	overflow: hidden;
+	width: calc(100% / 5);
+	border-top: 1px solid $border-on-white;
+	border-left: 1px solid $border-on-white;
+	// First five elements
+	&:nth-child(-n + 5) {
+		border-top: 0;
+	}
+}
+.day-info {
+	@extend .cf;
+	padding: 10px;
+	width: 50px;
+	text-align: left;
+	&.isNow {
+		color: $lapis-blue;
+	}
+}
+.day-date {
+	@extend .oswald;
+	font-size: ms(2);
+}
+.day-name {
+	padding-left: 1px;
+	color: $byline;
+	font-size: ms(0);
+	text-transform: uppercase;
+}
+.day-series {
+	padding: 0 10px 10px 10px;
+}
+.calendar-series {
+	@extend .cf;
+	padding-top: 10px;
+}
+.calendar-series-airtime {
+	width: 40px;
+	color: $byline;
+	&.isNow {
+		color: $lapis-blue;
+	}
+}
+.calendar-series-title {
+	cursor: pointer;
+	width: calc(100% - 40px);
+	display: inline;
+	font-weight: bold;
+	&:hover {
+		box-shadow: 0 1px 0 $winter-black;
+	}
+}
+.calendar-series-meta {
+	padding-top: 2px;
+	color: $byline;
+	font-size: ms(0);
+}
+
+.calendar-featured {
+	@extend .cf;
+	padding-top: 10px;
+}
+.calendar-featured-left {
+	display: none;
+	float: left;
+}
+.calendar-featured-card {
+	@extend .mask;
+	position: relative;
+	float: left;
+	width: calc(100%);
+	min-height: 50px;
+	border-radius: 4px;
+	background-size: cover;
+	background-position: center center;
+}
+.calendar-featured-series-airtime {
+	&.isNow {
+		color: mix($lapis-blue, white, 50%);
+	}
+}
+.calendar-featured-scrim {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0,0,0,0) 100%);
+}
+.calendar-featured-info {
+	position: relative;
+	z-index: 2;
+	padding: 10px;
+}
+.calendar-featured-title {
+	display: inline;
+	cursor: pointer;
+	color: #fff;
+	font-weight: 700;
+	&:hover {
+		box-shadow: 0 1px 0 #fff;
+	}
+}
+.calendar-featured-meta {
+	padding-top: 2px;
+	color: transparentize(#fff, 0.1);
+	font-size: ms(0);
+}
